@@ -8,7 +8,6 @@ import { topics } from '../model/topics';
 
 export const MainPage = () => {
   const [queryData, setQueryData] = useState('');
-  console.log('*** queryData', queryData);
   return (
     <Container maxW={'5xl'}>
       <Stack
@@ -38,7 +37,7 @@ export const MainPage = () => {
           gap={{ lg: '10', md: '5', sm: '1' }}
         >
           {topics.map((topic, index) => {
-            return <CategoryCard key={index} {...topic} />;
+            return <CategoryCard key={'Key: ' + index} {...topic} />;
           })}
         </Stack>
       </Stack>

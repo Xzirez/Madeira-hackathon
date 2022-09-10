@@ -72,20 +72,20 @@ export const WithSubnavigation = () => {
             variant={'link'}
             href={'#'}
           >
-            Sign In
+            Sign Out
           </Button>
           <Button
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
             fontWeight={600}
             color={'white'}
-            bg={'pink.400'}
+            bg={'green.400'}
             href={'#'}
             _hover={{
-              bg: 'pink.300',
+              bg: 'green.300',
             }}
           >
-            Sign Up
+            Name Surname
           </Button>
         </Stack>
       </Flex>
@@ -154,13 +154,13 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      _hover={{ bg: useColorModeValue('green.50', 'gray.900') }}
     >
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: 'green.400' }}
             fontWeight={500}
           >
             {label}
@@ -300,8 +300,8 @@ const NAV_ITEMS = [
         href: 'https://digitalnomads.startupmadeira.eu/',
       },
       {
-        label: 'Freelance Projects',
-        subLabel: 'Get in touch with ',
+        label: 'Nomads on Slack',
+        subLabel: 'Get in touch with locals',
         href: '#',
       },
     ],

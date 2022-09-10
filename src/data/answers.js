@@ -23,4 +23,8 @@ export const answersData = [
     answer: 'UK embassy',
     link: '',
   },
+  {
+    answer: 'School',
+    link: '/school',
+  },
 ];

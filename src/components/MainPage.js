@@ -1,9 +1,14 @@
-import { Container, Heading, Stack, Text, Icon } from '@chakra-ui/react';
+import React, { useState } from 'react';
+
+import { Flex, Container, Heading, Stack, Text, Icon } from '@chakra-ui/react';
+import { AnswerBox } from './AnswerBox';
 import { SearchBar } from './SearchBar';
 import CategoryCard from './CategoryCard';
 import { topics } from '../model/topics';
 
-const MainPage = () => {
+export const MainPage = () => {
+  const [queryData, setQueryData] = useState('');
+  console.log('*** queryData', queryData);
   return (
     <Container maxW={'5xl'}>
       <Stack
@@ -22,7 +27,9 @@ const MainPage = () => {
             made easy
           </Text>
         </Heading>
-        <SearchBar />
+        <SearchBar queryData={queryData} setQuetyData={setQueryData} />
+        <AnswerBox queryData={queryData} />
+        <Flex w={'full'}></Flex>
         <Stack
           direction={{ lg: 'row', md: 'row', sm: 'column' }}
           w="100%"
@@ -31,7 +38,7 @@ const MainPage = () => {
           gap={{ lg: '10', md: '5', sm: '1' }}
         >
           {topics.map((topic, index) => {
-            return <CategoryCard id={index} {...topic} />;
+            return <CategoryCard key={index} {...topic} />;
           })}
         </Stack>
       </Stack>

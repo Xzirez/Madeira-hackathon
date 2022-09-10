@@ -307,7 +307,7 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: 'Learn Design',
+    label: 'About this app',
     href: '#',
   },
   {

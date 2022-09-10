@@ -1,31 +1,14 @@
 import React from 'react';
-import { ChakraProvider, Box, Grid, theme, Stack } from '@chakra-ui/react';
 
-import CategoryCard from './components/CategoryCard';
-import { topics } from './model/topics';
+import { MainPage } from './components/MainPage';
+import { WithSubnavigation } from './components/Navbar';
+import { ChakraProvider, theme } from '@chakra-ui/react';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Stack
-          direction={{ lg: 'row', md: 'row', sm: 'column' }}
-          w="100%"
-          justifyContent="center"
-          minH="100vh"
-          p={3}
-        >
-          {topics.map(topic => {
-            return (
-              <CategoryCard
-                subtitles={topic.subtitles}
-                description={topic.description}
-                topic={topic.header}
-              />
-            );
-          })}
-        </Stack>
-      </Box>
+      <WithSubnavigation />
+      <MainPage />
     </ChakraProvider>
   );
 }

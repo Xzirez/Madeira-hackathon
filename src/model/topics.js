@@ -17,4 +17,10 @@ export const topics = [
     description: 'Risky',
     link: '/company',
   },
+  {
+    header: 'School',
+    subtitles: 'Wow',
+    description: 'Children',
+    link: '/school',
+  },
 ];

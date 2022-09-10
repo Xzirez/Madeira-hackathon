@@ -1,8 +1,8 @@
-import { Box, Button, Heading, List } from '@chakra-ui/react';
 import { SubjectCard } from '../components/SubjectCard';
+import { Box, Heading } from '@chakra-ui/react';
 import subjects from '../model/subjects';
 
-const Taxes = () => {
+const Taxes = ({ askDocument, setDocumentsList }) => {
   return (
     <Box
       width="100%"
@@ -23,7 +23,12 @@ const Taxes = () => {
         justifyContent="space-between"
       >
         {subjects.map((subject, index) => (
-          <SubjectCard key={'Key: ' + index} {...subject} />
+          <SubjectCard
+            key={'Key: ' + index}
+            {...subject}
+            askDocument={askDocument}
+            setDocumentsList={setDocumentsList}
+          />
         ))}
       </Box>
     </Box>

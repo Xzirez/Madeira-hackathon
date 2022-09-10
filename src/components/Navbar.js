@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import {
   HamburgerIcon,
   CloseIcon,
@@ -19,7 +21,6 @@ import {
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 
 export const WithSubnavigation = () => {
@@ -74,7 +75,7 @@ export const WithSubnavigation = () => {
           >
             Sign Out
           </Button>
-          <Link to='/personal'>
+          <Link to="/personal">
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
@@ -87,6 +88,21 @@ export const WithSubnavigation = () => {
               }}
             >
               Name Surname
+            </Button>
+          </Link>
+          <Link to="/institution-account">
+            <Button
+              display={{ base: 'none', md: 'inline-flex' }}
+              fontSize={'sm'}
+              fontWeight={600}
+              color={'white'}
+              bg={'blue.400'}
+              href={'#'}
+              _hover={{
+                bg: 'green.300',
+              }}
+            >
+              Instituition
             </Button>
           </Link>
         </Stack>

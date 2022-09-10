@@ -1,3 +1,4 @@
+import { CheckIcon, CloseIcon } from '@chakra-ui/icons';
 import {
   Box,
   Button,
@@ -7,8 +8,15 @@ import {
   ListIcon,
   Text,
 } from '@chakra-ui/react';
-import { CheckIcon, CloseIcon } from '@chakra-ui/icons';
 
+const fakeDocuments = [
+  {
+    id: 123,
+    person: 'New Citizen',
+    title: 'NIF',
+    description: 'NIF document',
+  },
+];
 export const SubjectCard = props => {
   return (
     <Box
@@ -25,13 +33,18 @@ export const SubjectCard = props => {
       <List padding="20px" gap="5px">
         {props.listItems.map((item, index) => {
           return (
-            <ListItem key={'Key: ' + index}>
+            <ListItem
+              key={'Key: ' + index}
+              onClick={() => props.askDocument(item)}
+            >
               <CheckItem {...item}></CheckItem>
             </ListItem>
           );
         })}
       </List>
-      <Button>Start</Button>
+      <Button onClick={() => props.setDocumentsList(fakeDocuments)}>
+        Start
+      </Button>
     </Box>
   );
 };

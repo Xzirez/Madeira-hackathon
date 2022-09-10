@@ -90,7 +90,7 @@ export const WithSubnavigation = () => {
               Name Surname
             </Button>
           </Link>
-          <Link to="/institution">
+          <Link to="/institution-account">
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}

@@ -13,13 +13,13 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 
 export const WithSubnavigation = () => {
@@ -72,21 +72,23 @@ export const WithSubnavigation = () => {
             variant={'link'}
             href={'#'}
           >
-            Sign In
+            Sign Out
           </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            href={'#'}
-            _hover={{
-              bg: 'pink.300',
-            }}
-          >
-            Sign Up
-          </Button>
+          <Link to='/personal'>
+            <Button
+              display={{ base: 'none', md: 'inline-flex' }}
+              fontSize={'sm'}
+              fontWeight={600}
+              color={'white'}
+              bg={'green.400'}
+              href={'#'}
+              _hover={{
+                bg: 'green.300',
+              }}
+            >
+              Name Surname
+            </Button>
+          </Link>
         </Stack>
       </Flex>
 
@@ -154,13 +156,13 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      _hover={{ bg: useColorModeValue('green.50', 'gray.900') }}
     >
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: 'green.400' }}
             fontWeight={500}
           >
             {label}
@@ -252,41 +254,67 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: 'Inspiration',
+    label: 'Explore',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
+        label: 'Covid-19',
+        subLabel: 'Restrictions and Vaccination',
         href: '#',
       },
       {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
+        label: 'Government',
+        subLabel: 'Main govermant departments listed on the map',
+        href: '#',
+      },
+      {
+        label: 'Healthcare',
+        subLabel: 'Health institutions, insurance, services',
+        href: '#',
+      },
+      {
+        label: 'Education',
+        subLabel:
+          'Schools, universities and electives available on the island ',
+        href: '#',
+      },
+      {
+        label: 'Taxes and Regulation',
+        subLabel: 'Main rules and required documentans',
+        href: '#',
+      },
+      {
+        label: 'Real Estate',
+        subLabel: 'Buy or rent a property in Madeira',
+        href: '#',
+      },
+      {
+        label: 'Employment  ',
+        subLabel: 'Find work or work remote on the island',
         href: '#',
       },
     ],
   },
   {
-    label: 'Find Work',
+    label: 'Community',
     children: [
       {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
+        label: 'Digital Nomads Madeira',
+        subLabel: 'Main web-page for digital nomads in Madeira',
+        href: 'https://digitalnomads.startupmadeira.eu/',
       },
       {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
+        label: 'Nomads on Slack',
+        subLabel: 'Get in touch with locals',
         href: '#',
       },
     ],
   },
   {
-    label: 'Learn Design',
+    label: 'About this app',
     href: '#',
   },
   {
-    label: 'Hire Designers',
+    label: 'FAQ',
     href: '#',
   },
 ];

@@ -3,12 +3,9 @@ import React, { useState } from 'react';
 import { Flex, Container, Heading, Stack, Text, Icon } from '@chakra-ui/react';
 import { AnswerBox } from './AnswerBox';
 import { SearchBar } from './SearchBar';
-import CategoryCard from './CategoryCard';
-import { topics } from '../model/topics';
 
 export const MainPage = () => {
   const [queryData, setQueryData] = useState('');
-  console.log('*** queryData', queryData);
   return (
     <Container maxW={'5xl'}>
       <Stack
@@ -22,25 +19,17 @@ export const MainPage = () => {
           fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
           lineHeight={'110%'}
         >
-          Meeting scheduling{' '}
-          <Text as={'span'} color={'orange.400'}>
-            made easy
+          {' '}
+          <Text as={'span'} color={'white'}>
+            All your documents{' '}
+          </Text>
+          <Text as={'span'} color={'blue.400'}>
+            in one place
           </Text>
         </Heading>
         <SearchBar queryData={queryData} setQuetyData={setQueryData} />
         <AnswerBox queryData={queryData} />
         <Flex w={'full'}></Flex>
-        <Stack
-          direction={{ lg: 'row', md: 'row', sm: 'column' }}
-          w="100%"
-          justifyContent="center"
-          p="3"
-          gap={{ lg: '10', md: '5', sm: '1' }}
-        >
-          {topics.map((topic, index) => {
-            return <CategoryCard key={index} {...topic} />;
-          })}
-        </Stack>
       </Stack>
     </Container>
   );

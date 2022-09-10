@@ -6,4 +6,5 @@
   padding: none;
   position: fixed;
   box-shadow: inset  black;
+  z-index: -1000;
 }

@@ -12,10 +12,9 @@ import { Link } from 'react-router-dom';
 
 const CategoryCard = props => {
   return (
-    <Center py={5}>
+    <Center>
       <Box
-        maxW={'425px'}
-        w={'full'}
+        w={{ lg: '320px', md: '250px', sm: '350px' }}
         // eslint-disable-next-line react-hooks/rules-of-hooks
         bg={useColorModeValue('white', 'gray.900')}
         boxShadow={'2xl'}

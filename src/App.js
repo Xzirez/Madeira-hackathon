@@ -5,19 +5,19 @@ import { WithSubnavigation } from './components/Navbar';
 import { ChakraProvider, theme } from '@chakra-ui/react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Video from './components/Video';
-import Overlay from './components/Overlay';
+import Taxes from './pages/Taxes';
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Router>
         <WithSubnavigation />
-        <Video />
         <Switch>
           <Route exact path="/">
             <MainPage />
+            <Video />
           </Route>
           <Route path="/taxes">
-            <p>Taxes</p>
+            <Taxes />
           </Route>
         </Switch>
       </Router>

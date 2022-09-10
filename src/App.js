@@ -6,6 +6,7 @@ import { ChakraProvider, theme } from '@chakra-ui/react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Video from './components/Video';
 import Taxes from './pages/Taxes';
+import PersonalAccount from './pages/PersonalAccount';
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/taxes">
             <Taxes />
+          </Route>
+          <Route path="/personal">
+            <PersonalAccount />
           </Route>
         </Switch>
       </Router>

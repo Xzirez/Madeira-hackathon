@@ -13,13 +13,13 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 
 export const WithSubnavigation = () => {
@@ -74,19 +74,21 @@ export const WithSubnavigation = () => {
           >
             Sign Out
           </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'green.400'}
-            href={'#'}
-            _hover={{
-              bg: 'green.300',
-            }}
-          >
-            Name Surname
-          </Button>
+          <Link to='/personal'>
+            <Button
+              display={{ base: 'none', md: 'inline-flex' }}
+              fontSize={'sm'}
+              fontWeight={600}
+              color={'white'}
+              bg={'green.400'}
+              href={'#'}
+              _hover={{
+                bg: 'green.300',
+              }}
+            >
+              Name Surname
+            </Button>
+          </Link>
         </Stack>
       </Flex>
 
@@ -271,7 +273,8 @@ const NAV_ITEMS = [
       },
       {
         label: 'Education',
-        subLabel: 'Schools, universities and electives available on the island ',
+        subLabel:
+          'Schools, universities and electives available on the island ',
         href: '#',
       },
       {

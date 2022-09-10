@@ -252,31 +252,56 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: 'Inspiration',
+    label: 'Explore',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
+        label: 'Covid-19',
+        subLabel: 'Restrictions and Vaccination',
         href: '#',
       },
       {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
+        label: 'Government',
+        subLabel: 'Main govermant departments listed on the map',
+        href: '#',
+      },
+      {
+        label: 'Healthcare',
+        subLabel: 'Health institutions, insurance, services',
+        href: '#',
+      },
+      {
+        label: 'Education',
+        subLabel: 'Schools, universities and electives available on the island ',
+        href: '#',
+      },
+      {
+        label: 'Taxes and Regulation',
+        subLabel: 'Main rules and required documentans',
+        href: '#',
+      },
+      {
+        label: 'Real Estate',
+        subLabel: 'Buy or rent a property in Madeira',
+        href: '#',
+      },
+      {
+        label: 'Employment  ',
+        subLabel: 'Find work or work remote on the island',
         href: '#',
       },
     ],
   },
   {
-    label: 'Find Work',
+    label: 'Community',
     children: [
       {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
+        label: 'Digital Nomads Madeira',
+        subLabel: 'Main web-page for digital nomads in Madeira',
+        href: 'https://digitalnomads.startupmadeira.eu/',
       },
       {
         label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
+        subLabel: 'Get in touch with ',
         href: '#',
       },
     ],
@@ -286,7 +311,7 @@ const NAV_ITEMS = [
     href: '#',
   },
   {
-    label: 'Hire Designers',
+    label: 'FAQ',
     href: '#',
   },
 ];

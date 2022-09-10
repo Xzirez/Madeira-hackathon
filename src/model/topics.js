@@ -12,12 +12,6 @@ export const topics = [
     link: '/immigration',
   },
   {
-    header: 'Open a company',
-    subtitles: 'Wow',
-    description: 'Risky',
-    link: '/company',
-  },
-  {
     header: 'School',
     subtitles: 'Wow',
     description: 'Children',

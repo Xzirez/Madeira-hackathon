@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   Button,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const CategoryCard = props => {
   return (
@@ -37,7 +38,7 @@ const CategoryCard = props => {
             fontSize={'sm'}
             letterSpacing={1.1}
           >
-            {props.topic}
+            {props.header}
           </Text>
           <Heading
             // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -49,15 +50,17 @@ const CategoryCard = props => {
           </Heading>
           <Text color={'gray.500'}>{props.description}</Text>
         </Stack>
-        <Button
-          marginTop={'4'}
-          marginBottom={'3'}
-          colorScheme="blue"
-          variant="solid"
-          size={'lg'}
-        >
-          Start
-        </Button>
+        <Link to={props.link}>
+          <Button
+            marginTop={'4'}
+            marginBottom={'3'}
+            colorScheme="blue"
+            variant="solid"
+            size={'lg'}
+          >
+            Start
+          </Button>
+        </Link>
       </Box>
     </Center>
   );

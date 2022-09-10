@@ -1,16 +1,9 @@
-import {
-  Flex,
-  Container,
-  Heading,
-  Stack,
-  Text,
-  Button,
-  Icon,
-  IconProps,
-} from '@chakra-ui/react';
+import { Container, Heading, Stack, Text, Icon } from '@chakra-ui/react';
 import { SearchBar } from './SearchBar';
+import CategoryCard from './CategoryCard';
+import { topics } from '../model/topics';
 
-export const MainPage = () => {
+const MainPage = () => {
   return (
     <Container maxW={'5xl'}>
       <Stack
@@ -30,37 +23,25 @@ export const MainPage = () => {
           </Text>
         </Heading>
         <SearchBar />
-        <Text color={'gray.500'} maxW={'3xl'}>
-          Never miss a meeting. Never be late for one too. Keep track of your
-          meetings and receive smart reminders in appropriate times. Read your
-          smart “Daily Agenda” every morning.
-        </Text>
-        <Stack spacing={6} direction={'row'}>
-          <Button
-            rounded={'full'}
-            px={6}
-            colorScheme={'orange'}
-            bg={'orange.400'}
-            _hover={{ bg: 'orange.500' }}
-          >
-            Get started
-          </Button>
-          <Button rounded={'full'} px={6}>
-            Learn more
-          </Button>
+        <Stack
+          direction={{ lg: 'row', md: 'row', sm: 'column' }}
+          w="100%"
+          justifyContent="center"
+          p="3"
+          gap={{ lg: '10', md: '5', sm: '1' }}
+        >
+          {topics.map((topic, index) => {
+            return <CategoryCard id={index} {...topic} />;
+          })}
         </Stack>
-        <Flex w={'full'}>
-          <Illustration
-            height={{ sm: '24rem', lg: '28rem' }}
-            mt={{ base: 12, sm: 16 }}
-          />
-        </Flex>
       </Stack>
     </Container>
   );
 };
 
-export const Illustration = (props: IconProps) => {
+export default MainPage;
+
+export const Illustration = props => {
   return (
     <Icon
       width="100%"

@@ -3,10 +3,13 @@ import { ChakraProvider, Box, Grid, theme, Stack } from '@chakra-ui/react';
 
 import CategoryCard from './components/CategoryCard';
 import { topics } from './model/topics';
-
+import Video from './components/Video';
+import Overlay from './components/Overlay';
 function App() {
   return (
     <ChakraProvider theme={theme}>
+      <Video />
+      <Overlay />
       <Box textAlign="center" fontSize="xl">
         <Stack
           direction="row"

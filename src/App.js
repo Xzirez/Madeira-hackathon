@@ -1,39 +1,30 @@
 import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import { ChakraProvider, Box, Grid, theme, Stack } from '@chakra-ui/react';
+
+import CategoryCard from './components/CategoryCard';
+import { topics } from './model/topics';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
+        <Stack
+          direction="row"
+          w="100%"
+          justifyContent="center"
+          minH="100vh"
+          p={3}
+        >
+          {topics.map(topic => {
+            return (
+              <CategoryCard
+                subtitles={topic.subtitles}
+                description={topic.description}
+                topic={topic.header}
+              />
+            );
+          })}
+        </Stack>
       </Box>
     </ChakraProvider>
   );
